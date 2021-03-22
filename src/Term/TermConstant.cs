@@ -47,7 +47,7 @@ namespace Parser.Expression
             _ => new TermConstant(constant)
         };
 
-        public override TermBase Div(TermBase b) => this is null? null: this is TermZero? new TermZero(): 
+        public override TermBase Div(TermBase b) => this is null ? null :
             b switch
         {
             TermZero _ => throw new DivideByZeroException($"{this}/{b}"),
