@@ -43,11 +43,11 @@ var variableA = new EMDD.KtEquationTree.Exprs.Singles.Identifier("A");
 //lambda functions (x, y) => x + y
 var x = new EMDD.KtEquationTree.Exprs.Singles.Identifier("x");
 var y = new EMDD.KtEquationTree.Exprs.Singles.Identifier("y");
-var mathfunction = EMDD.KtEquationTree.Exprs.Unary.Call(x + y, (x, y));
+var mathfunction = new EMDD.KtEquationTree.Exprs.Unary.Call(x + y, (x, y));
 
 // square root of an Expr
 var x = new EMDD.KtEquationTree.Exprs.Singles.Identifier("x");
-var sqrtOfX = new  EMDD.KtEquationTree.Exprs.Unary.SqrtOp(x);
+var sqrtOfX = new EMDD.KtEquationTree.Exprs.Unary.SqrtOp(x);
 ```
 
 ### Parsing of string to number `Expr`
