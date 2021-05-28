@@ -25,10 +25,10 @@ https://www.nuget.org/packages/EMDD.KtEquationTree/
 `<PackageReference Include="Pidgin" Version="2.5.0" />`
 
 ## Motivation
-I really wanted to at-least mimic the basic functionality of [wxmaxima](http://wxmaxima-developers.github.io/wxmaxima/index.html) in .Net. Here are some of the things I wanted to see:
+- I really wanted to at-least mimic the basic functionality of [wxmaxima](http://wxmaxima-developers.github.io/wxmaxima/index.html) in .Net. Here are some of the things I wanted to see:
     - parsing of text to symbolic math expressions
     - simplication of math expressions
-To cut it short, this is my take on this task
+- To cut it short, this is my take on this task
 
 ## Usage
 - strings can be parsed into numbers or math expression using `EMDD.KtEquationTree.Parsers.ExprParser.ParseOrThrow();`, see examples below.
