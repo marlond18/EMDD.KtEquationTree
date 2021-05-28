@@ -33,32 +33,21 @@ https://www.nuget.org/packages/EMDD.KtEquationTree/
 ## Usage
 - strings can be parsed into numbers or math expression using `EMDD.KtEquationTree.Parsers.ExprParser.ParseOrThrow();`, see examples below.
 - Actual `Expr` can be instantiated as:
-    - Literal
-
 ```c#
+// Literal
 var number = EMDD.KtEquationTree.Exprs.Singles.Literal.Create(20);
-```
 
-    - Variables
-
-```c#
+// Variables
 var variableA = new EMDD.KtEquationTree.Exprs.Singles.Identifier("A");
-```
 
-    - Other `Expr`
-
-```c#
 //lambda functions (x, y) => x + y
 var x = new EMDD.KtEquationTree.Exprs.Singles.Identifier("x");
 var y = new EMDD.KtEquationTree.Exprs.Singles.Identifier("y");
 var mathfunction = EMDD.KtEquationTree.Exprs.Unary.Call(x + y, (x, y));
 
-
 // square root of an Expr
 var x = new EMDD.KtEquationTree.Exprs.Singles.Identifier("x");
 var sqrtOfX = new  EMDD.KtEquationTree.Exprs.Unary.SqrtOp(x);
-
-//
 ```
 
 ### Parsing of string to number `Expr`
