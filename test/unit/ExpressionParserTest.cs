@@ -22,6 +22,7 @@ namespace KtEquationTreeTest
             var expected = newlit.Factor();
             var actual = new[] { PowerOp.Create(2, 77), PowerOp.Create(3, 52), PowerOp.Create(5, 5), PowerOp.Create(7, 14) };
             Assert.IsTrue(expected.ContentEquals(actual));
+            
         }
     }
 
@@ -994,9 +995,7 @@ namespace KtEquationTreeTest
         [TestMethod]
         public void ExprNegateNullTest()
         {
-#pragma warning disable CC0030 // Make Local Variable Constant.
             Expr B = null;
-#pragma warning restore CC0030 // Make Local Variable Constant.
             Assert.IsNull(-B);
         }
 

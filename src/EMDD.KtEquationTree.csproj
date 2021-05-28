@@ -16,6 +16,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Mathematical Expression Parser, Parser, C#, EMDD. Equation Parser, Equation</PackageTags>
     <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
