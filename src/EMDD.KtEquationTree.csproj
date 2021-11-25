@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>EMDD.KtEquationTree</AssemblyName>
     <RootNamespace>EMDD.KtEquationTree</RootNamespace>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -21,19 +21,17 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <LangVersion>9.0</LangVersion>
     <WarningLevel>0</WarningLevel>
     <OutputPath>D:\Programming Work\EMDD.KtEquationTree\build\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <LangVersion>9.0</LangVersion>
     <OutputPath>D:\Programming Work\EMDD.KtEquationTree\build\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EMDD.Kt.Extensions" Version="1.0.0" />
-    <PackageReference Include="Pidgin" Version="2.5.0" />
+    <PackageReference Include="EMDD.Kt.Extensions" Version="1.0.0.1" />
+    <PackageReference Include="Pidgin" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>

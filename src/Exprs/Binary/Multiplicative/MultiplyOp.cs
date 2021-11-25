@@ -63,5 +63,16 @@ namespace EMDD.KtEquationTree.Exprs.Binary.Multiplicative
         public override int GetHashCode() => unchecked(539060728.ChainHashCode(Left).ChainHashCode(Right));
 
         public override FactorsBase InnerFactor() => IsSimple ? Left.InnerFactor().Concat(Right.InnerFactor()) : Simplify().InnerFactor();
+
+        public override bool TryToDouble(out double value)
+        {
+            if (Left.TryToDouble(out double valLeft) && Right.TryToDouble(out double valRight))
+            {
+                value = valLeft*valRight;
+                return true;
+            }
+            value = 0;
+            return false;
+        }
     }
 }

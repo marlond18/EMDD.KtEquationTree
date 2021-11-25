@@ -45,5 +45,11 @@ namespace EMDD.KtEquationTree.Exprs.Singles
         public override IEnumerable<Expr> Factor() => new[] { this };
 
         public override FactorsBase InnerFactor() => FactorsSingle.Create(FactorSingleN.Create(this));
+
+        public override bool TryToDouble(out double value)
+        {
+            value = 0;
+            return false;
+        }
     }
 }

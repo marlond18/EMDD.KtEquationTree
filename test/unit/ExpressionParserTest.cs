@@ -9,9 +9,30 @@ using EMDD.KtEquationTree.Exprs.Singles;
 using EMDD.KtEquationTree.Exprs.Binary.Multiplicative;
 using EMDD.KtEquationTree.Exprs.Unary;
 using EMDD.KtEquationTree.Exprs;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace KtEquationTreeTest
 {
+    public abstract class BaseTestDataSourceAttribute : Attribute, ITestDataSource
+    {
+        public IEnumerable<object[]> GetData(MethodInfo methodInfo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetDisplayName(MethodInfo methodInfo, object[] data)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    [TestClass]
+    public class TryToDoubleTests
+    {
+
+    }
+
     [TestClass]
     public class FactorTests
     {
@@ -22,7 +43,6 @@ namespace KtEquationTreeTest
             var expected = newlit.Factor();
             var actual = new[] { PowerOp.Create(2, 77), PowerOp.Create(3, 52), PowerOp.Create(5, 5), PowerOp.Create(7, 14) };
             Assert.IsTrue(expected.ContentEquals(actual));
-            
         }
     }
 
@@ -187,7 +207,7 @@ namespace KtEquationTreeTest
         public void ParseSciNotWithParenTest2()
         {
             var f = ExprParser.ParseOrThrow("-(1.2340000)E(-14)");
-            Assert.AreEqual(f, (new NegativeOne()  - (Literal.Create(234)/ Literal.Create(1000)))*PowerOp.Create(10,-14));
+            Assert.AreEqual(f, (new NegativeOne() - (Literal.Create(234) / Literal.Create(1000))) * PowerOp.Create(10, -14));
         }
 
         [TestMethod]
@@ -201,7 +221,7 @@ namespace KtEquationTreeTest
         public void ParseCallTest()
         {
             var f = ExprParser.ParseOrThrow("f(x)");
-            Assert.AreEqual(f,new Call(new Identifier("f"),new Identifier("x")) );
+            Assert.AreEqual(f, new Call(new Identifier("f"), new Identifier("x")));
         }
 
         [TestMethod]

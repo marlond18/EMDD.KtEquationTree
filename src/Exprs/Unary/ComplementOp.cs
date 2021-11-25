@@ -62,5 +62,16 @@ namespace EMDD.KtEquationTree.Exprs.Unary
         public override Expr Invert() => this.RaiseToNegativeOne();
 
         public override FactorsBase InnerFactor() => FactorsSingle.Create(FactorSingleN.Create(this));
+
+        public override bool TryToDouble(out double value)
+        {
+            if (Expr.TryToDouble(out double val1) && val1 > 0)
+            {
+                value = Math.Sqrt(val1);
+                return true;
+            }
+            value = 0;
+            return false;
+        }
     }
 }

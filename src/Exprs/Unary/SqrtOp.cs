@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
 
 using EMDD.KtEquationTree.Exprs.Binary.Multiplicative;
@@ -69,5 +70,16 @@ namespace EMDD.KtEquationTree.Exprs.Unary
         public override Expr Invert() => PowerOp.Create(Expr, DivideOp.Create(-1, 2));
 
         public override FactorsBase InnerFactor() => FactorsSingle.Create(FactorPowN.Create(Expr, DivideOp.Create(1, 2)));
+
+        public override bool TryToDouble(out double value)
+        {
+            if (Expr.TryToDouble(out double val1) && val1 > 0)
+            {
+                value = Math.Sqrt(val1);
+                return true;
+            }
+            value = 0;
+            return false;
+        }
     }
 }

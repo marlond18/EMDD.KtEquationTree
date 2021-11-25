@@ -74,5 +74,16 @@ namespace EMDD.KtEquationTree.Exprs.Binary.Additive
             return CreateFactor(Left.InnerFactor().Venn(Right.InnerFactor()));
             FactorsBase CreateFactor((FactorsBase OnlyA, FactorsBase AandB, FactorsBase OnlyB) venn) => venn.AandB.Concat(FactorsSingle.Create(FactorSingleN.Create(venn.OnlyA.ToExpr() + venn.OnlyB.ToExpr())));
         }
+
+        public override bool TryToDouble(out double value)
+        {
+            if (Left.TryToDouble(out double valLeft) && Right.TryToDouble(out double valRight))
+            {
+                value = valLeft + valRight;
+                return true;
+            }
+            value = 0;
+            return false;
+        }
     }
 }

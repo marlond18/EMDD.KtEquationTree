@@ -48,5 +48,11 @@ namespace EMDD.KtEquationTree.Exprs.Unary
         public override Expr Invert() => PowerOp.Create(this, -new One());
 
         public override FactorsBase InnerFactor() => FactorsSingle.Create(FactorSingleN.Create(this));
+
+        public override bool TryToDouble(out double value)
+        {
+            value = 0;
+            return false;
+        }
     }
 }

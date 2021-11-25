@@ -46,6 +46,13 @@ namespace EMDD.KtEquationTree.Exprs
 
         public abstract Expr Invert();
 
+        /// <summary>
+        /// Try to Convert Expression to Decimal Value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public abstract bool TryToDouble(out double value);
+
         public override bool Equals(object obj) =>
             ReferenceEquals(this, obj) ||
             this is null ? false :

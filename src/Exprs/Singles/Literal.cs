@@ -93,5 +93,11 @@ namespace EMDD.KtEquationTree.Exprs.Singles
             if (pair.e > 1) return FactorPowN.Create(pair.b.ToExpr(), pair.e.ToExpr());
             return FactorSingleN.Create(pair.b.ToExpr());
         }
+
+        public override bool TryToDouble(out double value)
+        {
+            value = ToDouble();
+            return true;
+        }
     }
 }
