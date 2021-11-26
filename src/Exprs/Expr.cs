@@ -61,6 +61,8 @@ namespace EMDD.KtEquationTree.Exprs
 
         public abstract override int GetHashCode();
 
+        public abstract Expr Subtitute(Expr current, Expr replacement);
+
         public bool IsSimple { get; internal set; }
     }
 }
