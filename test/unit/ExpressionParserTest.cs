@@ -1,16 +1,4 @@
 ﻿namespace KtEquationTreeTest;
-public abstract class BaseTestDataSourceAttribute : Attribute, ITestDataSource
-{
-    public IEnumerable<object[]> GetData(MethodInfo methodInfo)
-    {
-        throw new NotImplementedException();
-    }
-
-    public string GetDisplayName(MethodInfo methodInfo, object[] data)
-    {
-        throw new NotImplementedException();
-    }
-}
 
 [TestClass]
 public class AddTest
