@@ -3,12 +3,7 @@ using EMDD.KtEquationTree.Exprs.Binary.Multiplicative;
 using EMDD.KtEquationTree.Exprs.Singles;
 using EMDD.KtEquationTree.Exprs.Unary;
 
-using KtExtensions;
-
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace EMDD.KtEquationTree.Factors
 {

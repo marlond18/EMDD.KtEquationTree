@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-
+﻿
 using EMDD.KtEquationTree.Constant;
 using EMDD.KtEquationTree.Exprs;
 using EMDD.KtEquationTree.Exprs.Singles;
 using EMDD.KtEquationTree.Exprs.Unary;
-
-using KtExtensions;
 
 using Parser.Expression;
 using Parser.Expression.Var;

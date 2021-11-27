@@ -1,9 +1,6 @@
-﻿using System;
-
+﻿
 using EMDD.KtEquationTree.Constant;
 using EMDD.KtEquationTree.Exprs;
-
-using KtExtensions;
 
 using Parser.Expression.Var;
 

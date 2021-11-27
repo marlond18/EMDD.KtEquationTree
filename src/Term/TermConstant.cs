@@ -1,11 +1,7 @@
-﻿using System;
-using System.Numerics;
-
+﻿
 using EMDD.KtEquationTree.Constant;
 using EMDD.KtEquationTree.Exprs;
 using EMDD.KtEquationTree.Fractions;
-
-using KtExtensions;
 
 namespace Parser.Expression
 {

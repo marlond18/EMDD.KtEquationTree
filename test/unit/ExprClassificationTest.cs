@@ -1,21 +1,12 @@
-﻿using EMDD.KtEquationTree.Exprs.Singles;
+﻿namespace KtEquationTreeTest;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Parser.Expression;
-
-
-namespace KtEquationTreeTest
+[TestClass]
+public class ExprClassificationTest
 {
-    [TestClass]
-    public class ExprClassificationTest
+    [TestMethod]
+    public void LiteralTest()
     {
-        [TestMethod]
-        public void LiteralTest()
-        {
-            _ = new One();
-            
-        }
-        
+        _ = new One();
+
     }
 }

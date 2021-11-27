@@ -1,8 +1,6 @@
 ﻿using EMDD.KtEquationTree.Exprs;
 using EMDD.KtEquationTree.Exprs.Singles;
 
-using System.Collections.Generic;
-
 namespace Parser.Expression
 {
     internal class TermsZero : TermsBase, IEnumerable<TermBase>

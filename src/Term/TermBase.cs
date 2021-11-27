@@ -1,8 +1,5 @@
-﻿using System;
-
+﻿
 using EMDD.KtEquationTree.Exprs;
-
-using KtExtensions;
 
 namespace Parser.Expression
 {

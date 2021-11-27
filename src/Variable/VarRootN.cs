@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-
+﻿
 using EMDD.KtEquationTree.Exprs;
 using EMDD.KtEquationTree.Exprs.Binary.Multiplicative;
 using EMDD.KtEquationTree.Fractions;
 using EMDD.KtEquationTree.Exprs.Singles;
-
-using KtExtensions;
 
 namespace Parser.Expression.Var
 {

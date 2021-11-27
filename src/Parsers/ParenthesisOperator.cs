@@ -3,8 +3,6 @@ using Pidgin;
 
 using static EMDD.KtEquationTree.Parsers.Tokens;
 
-using ParserChar = Pidgin.Parser<char, char>;
-
 namespace Parser.Methods
 {
     internal static class ParenthesisOperator

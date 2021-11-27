@@ -1,55 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-
-using EMDD.KtEquationTree.Factors;
-
-using KtExtensions;
+﻿using EMDD.KtEquationTree.Factors;
 
 using Parser.Expression;
 using Parser.Expression.Var;
 
-namespace EMDD.KtEquationTree.Exprs.Singles
+namespace EMDD.KtEquationTree.Exprs.Singles;
+public class Identifier : Single
 {
-    public class Identifier : Single
+    public Identifier(string definition)
     {
-        public Identifier(string definition)
+        Definition = definition;
+        IsSimple = true;
+    }
+
+    public string Definition { get; }
+
+    public override int GetHashCode() => unchecked(539060726.ChainHashCode(Definition));
+
+    public override string ToString() => Definition;
+
+    public override bool Equals(Expr other) =>
+        ReferenceEquals(this, other) ? true :
+        this is null ? false :
+        other is null ? false : other switch
         {
-            Definition = definition;
-            IsSimple = true;
-        }
+            { IsSimple: false } => Equals(other.Simplify()),
+            Identifier l => Definition.Equals(l.Definition, StringComparison.Ordinal),
+            _ => false
+        };
 
-        public string Definition { get; }
+    internal override TermsBase Terms() => TermsSingle.Create(TermVariables.Create(VarN.Create(this)));
 
-        public override int GetHashCode() => unchecked(539060726.ChainHashCode(Definition));
+    public static bool operator ==(Identifier a, Identifier b) => a.DefaultEquals(b);
 
-        public override string ToString() => Definition;
+    public static bool operator !=(Identifier a, Identifier b) => !(a == b);
 
-        public override bool Equals(Expr other) =>
-            ReferenceEquals(this, other) ? true :
-            this is null ? false :
-            other is null ? false : other switch
-            {
-                { IsSimple: false } => Equals(other.Simplify()),
-                Identifier l => Definition.Equals(l.Definition, StringComparison.Ordinal),
-                _ => false
-            };
+    public override Expr Simplify() => this;
 
-        internal override TermsBase Terms() => TermsSingle.Create(TermVariables.Create(VarN.Create(this)));
+    public override IEnumerable<Expr> Factor() => new[] { this };
 
-        public static bool operator ==(Identifier a, Identifier b) => a.DefaultEquals(b);
+    public override FactorsBase InnerFactor() => FactorsSingle.Create(FactorSingleN.Create(this));
 
-        public static bool operator !=(Identifier a, Identifier b) => !(a == b);
+    public override bool TryToDouble(out double value)
+    {
+        value = 0;
+        return false;
+    }
 
-        public override Expr Simplify() => this;
-
-        public override IEnumerable<Expr> Factor() => new[] { this };
-
-        public override FactorsBase InnerFactor() => FactorsSingle.Create(FactorSingleN.Create(this));
-
-        public override bool TryToDouble(out double value)
-        {
-            value = 0;
-            return false;
-        }
+    public override Expr Subtitute(Expr current, Expr replacement)
+    {
+        return this == current ? replacement : this;
     }
 }

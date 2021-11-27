@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using EMDD.KtEquationTree.Exprs.Binary.Main;
 using EMDD.KtEquationTree.Exprs.Singles;
 using EMDD.KtEquationTree.Factors;
-
-using KtExtensions;
 
 using Parser.Expression;
 
@@ -78,6 +73,12 @@ namespace EMDD.KtEquationTree.Exprs.Unary
             }
             value = 0;
             return false;
+        }
+
+        public override Expr Subtitute(Expr current, Expr replacement)
+        {
+            var newExpr = Expr== current ? replacement : Expr.Subtitute(current, replacement);
+            return Create(newExpr);
         }
     }
 }

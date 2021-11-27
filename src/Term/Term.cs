@@ -1,12 +1,9 @@
-﻿using System;
-
+﻿
 using EMDD.KtEquationTree.Constant;
 using EMDD.KtEquationTree.Exprs;
 using EMDD.KtEquationTree.Exprs.Binary.Multiplicative;
 using EMDD.KtEquationTree.Exprs.Singles;
 using EMDD.KtEquationTree.Exprs.Unary;
-
-using KtExtensions;
 
 using Parser.Expression.Var;
 

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using EMDD.KtEquationTree.Exprs.Singles;
+﻿using EMDD.KtEquationTree.Exprs.Singles;
 
 using EMDD.KtEquationTree.Exprs;
 using EMDD.KtEquationTree.Exprs.Binary.Multiplicative;
-
-using KtExtensions;
 
 namespace Parser.Expression.Var
 {

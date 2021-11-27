@@ -1,10 +1,4 @@
-﻿using EMDD.KtEquationTree.Exprs.Unary;
-using EMDD.KtEquationTree.Parsers;
-using EMDD.KtEquationTree.Exprs.Singles;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace KtEquationTreeTest
+﻿namespace KtEquationTreeTest
 {
     [TestClass]
     public class ExprEqualityTest

@@ -1,11 +1,6 @@
-﻿
-using System;
-
-namespace EMDD.KtEquationTree.Exprs.Singles
+﻿namespace EMDD.KtEquationTree.Exprs.Singles;
+public abstract class Single : Expr, IEquatable<Expr>
 {
-    public abstract class Single : Expr, IEquatable<Expr>
-    {
-        public override Expr Invert() => this.RaiseToNegativeOne();
+    public override Expr Invert() => this.RaiseToNegativeOne();
 
-    }
 }

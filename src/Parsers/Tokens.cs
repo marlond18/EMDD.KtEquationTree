@@ -3,9 +3,6 @@ using Pidgin;
 
 using static Pidgin.Parser;
 
-using ParserChar = Pidgin.Parser<char, char>;
-using ParserStr = Pidgin.Parser<char, string>;
-
 namespace EMDD.KtEquationTree.Parsers
 {
     public static class Tokens

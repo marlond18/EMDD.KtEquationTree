@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 using EMDD.KtEquationTree.Exprs;
-
-using KtExtensions;
 
 namespace Parser.Expression.Var
 {

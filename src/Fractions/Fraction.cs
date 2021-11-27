@@ -5,9 +5,6 @@ using EMDD.KtEquationTree.Exprs.Unary;
 
 using Parser.Expression;
 
-using System;
-using System.Numerics;
-
 namespace EMDD.KtEquationTree.Fractions
 {
     public struct Fraction
