@@ -5,6 +5,73 @@ namespace KtEquationTreeTest;
 [TestClass]
 public class EqualsOpTests
 {
+    [TestMethod]
+    public void NestedEqualsOpTest()
+    {
+        var e = ExprParser.ParseOrThrow("a=b=c");
+        if(e is EqualsOp eo)
+        {
+            if (eo.Left is EqualsOp oo && oo.Left is Identifier i1 && oo.Right is Identifier i2)
+            {
+                Assert.AreEqual(i1.Definition, "a");
+                Assert.AreEqual(i2.Definition, "b");
+            }
+            else
+            {
+                Assert.Fail($"{eo.Left} not an equalsop.");
+            }
+
+
+            if (eo.Right is Identifier i)
+            {
+                Assert.AreEqual(i.Definition, "c");
+            }
+            else
+            {
+                Assert.Fail($"{eo.Right} is not an identifier.");
+                Assert.Fail();
+            }
+        }
+        else
+        {
+            Assert.Fail("not an equalsop");
+        }
+    }
+
+    [TestMethod]
+    public void NestedEqualsOp2Test()
+    {
+        var e = ExprParser.ParseOrThrow("a=b+2=c");
+        if (e is EqualsOp eo)
+        {
+            if (eo.Left is EqualsOp oo && oo.Left is Identifier i1 && oo.Right is AddOp i2)
+            {
+                Assert.AreEqual(i1.Definition, "a");
+                Assert.AreEqual(((Identifier)i2.Left).Definition, "b");
+                Assert.AreEqual(((Literal)i2.Right).Value, 2);
+            }
+            else
+            {
+                Assert.Fail($"{eo.Left} not an equalsop.");
+            }
+
+
+            if (eo.Right is Identifier i)
+            {
+                Assert.AreEqual(i.Definition, "c");
+            }
+            else
+            {
+                Assert.Fail($"{eo.Right} is not an identifier.");
+                Assert.Fail();
+            }
+        }
+        else
+        {
+            Assert.Fail("not an equalsop");
+        }
+    }
+
     [DataTestMethod]
     [EqualsOpCreateTestData]
     public void SimpleEqualsOpTest(string ex)

@@ -19,6 +19,9 @@
     <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -36,10 +39,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\EMDD.Kt.Extensions\src\Images\emd2.png">
+    <None Update="emd2.png">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+
+
 
 </Project>
