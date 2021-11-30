@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31105.61
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{109BDA5F-0C8E-4369-AFE6-7A984586E0E2}"
 EndProject
@@ -11,12 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{3741791C-F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMDD.KtEquationTreeTest", "test\unit\EMDD.KtEquationTreeTest.csproj", "{CB0E396A-2DA9-41D5-85E8-55A21C615EB3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMDD.KtEquationTree", "src\EMDD.KtEquationTree.csproj", "{449D4AA4-2726-4FDD-A604-9056DAD17B42}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BCB2B39E-C31D-4286-97BA-607FC640561F}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMDD.KtEquationTree", "src\EMDD.KtEquationTree\EMDD.KtEquationTree.csproj", "{D12C1912-649E-4DC2-96D3-57F10DF3204D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMDD.KtMathStatement", "src\EMDD.KtMathStatement\EMDD.KtMathStatement.csproj", "{BECE4D49-89D4-4369-83F3-7E18267917FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +30,14 @@ Global
 		{CB0E396A-2DA9-41D5-85E8-55A21C615EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB0E396A-2DA9-41D5-85E8-55A21C615EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB0E396A-2DA9-41D5-85E8-55A21C615EB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{449D4AA4-2726-4FDD-A604-9056DAD17B42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{449D4AA4-2726-4FDD-A604-9056DAD17B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{449D4AA4-2726-4FDD-A604-9056DAD17B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{449D4AA4-2726-4FDD-A604-9056DAD17B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D12C1912-649E-4DC2-96D3-57F10DF3204D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12C1912-649E-4DC2-96D3-57F10DF3204D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12C1912-649E-4DC2-96D3-57F10DF3204D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12C1912-649E-4DC2-96D3-57F10DF3204D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECE4D49-89D4-4369-83F3-7E18267917FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECE4D49-89D4-4369-83F3-7E18267917FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECE4D49-89D4-4369-83F3-7E18267917FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECE4D49-89D4-4369-83F3-7E18267917FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,7 +45,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3741791C-FCD8-44AE-A0FC-6A9922EAABFC} = {F5FBF055-4817-487C-BB89-6BCE1010357E}
 		{CB0E396A-2DA9-41D5-85E8-55A21C615EB3} = {3741791C-FCD8-44AE-A0FC-6A9922EAABFC}
-		{449D4AA4-2726-4FDD-A604-9056DAD17B42} = {109BDA5F-0C8E-4369-AFE6-7A984586E0E2}
+		{D12C1912-649E-4DC2-96D3-57F10DF3204D} = {109BDA5F-0C8E-4369-AFE6-7A984586E0E2}
+		{BECE4D49-89D4-4369-83F3-7E18267917FF} = {109BDA5F-0C8E-4369-AFE6-7A984586E0E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E294AEF-8F79-4200-BD0B-A93A916A3A9C}

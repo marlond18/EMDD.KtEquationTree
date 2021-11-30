@@ -4,13 +4,7 @@
 public class IdentifiersTests
 {
     [DataTestMethod]
-    [DataRow("a_a")]
-    [DataRow("a_")]
-    [DataRow("b_a")]
-    [DataRow("b_adaa1")]
-    [DataRow("b1_adaa")]
-    [DataRow("b1_1adaa")]
-    [DataRow("b1_1")]
+    [WithSubscriptTestTestData]
     public void WithSubscriptTest(string expr)
     {
         var e = ExprParser.ParseOrThrow(expr);
@@ -21,6 +15,27 @@ public class IdentifiersTests
         else
         {
             Assert.Fail($"{e} from {expr} is not an identifier");
+        }
+    }
+
+    [AttributeUsage(AttributeTargets.Method)]
+    public class WithSubscriptTestTestDataAttribute : Attribute, ITestDataSource
+    {
+        public IEnumerable<object[]> GetData(MethodInfo methodInfo)
+        {
+            yield return new object[] { "a_a" };
+            yield return new object[] { "a_" };
+            yield return new object[] { "b_a" };
+            yield return new object[] { "b_adaa1" };
+            yield return new object[] { "b1_adaa" };
+            yield return new object[] { "b1_1adaa" };
+            yield return new object[] { "b1_1" };
+            yield return new object[] { "fᐠ_c" };
+        }
+
+        public string GetDisplayName(MethodInfo methodInfo, object[] data)
+        {
+            return $"{data[0]} is an identifier";
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿global using System;
 global using Microsoft.VisualStudio.TestTools.UnitTesting;
 global using System.Linq;
+global using System.Numerics;
 global using KtExtensions;
 global using EMDD.KtEquationTree.Parsers;
 global using EMDD.KtEquationTree.Exprs.Binary.Additive;

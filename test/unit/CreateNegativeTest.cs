@@ -1,5 +1,7 @@
 ﻿namespace KtEquationTreeTest;
 
+
+
 [TestClass]
 public class CreateNegativeTest
 {

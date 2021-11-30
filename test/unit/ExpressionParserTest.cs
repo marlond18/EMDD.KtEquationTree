@@ -59,7 +59,7 @@ public class ParseTextToExpTest
     public void ParseCallTest()
     {
         var f = ExprParser.ParseOrThrow("f(x)");
-        Assert.AreEqual(f, new Call(new Identifier("f"), new Identifier("x")));
+        Assert.AreEqual(f, Call.Create(new Identifier("f"), new Identifier("x")));
     }
 
     [TestMethod]
@@ -303,9 +303,6 @@ public class ExpressionParserTest
         var d = -De;
         var actual = PowerOp.Create(Two, d);
         Assert.AreEqual(ExprParser.ParseOrThrow("2 ^-de"), actual);
-        var inf = Two.Raise(d).InnerFactor();
-        Console.WriteLine(Two.Raise(d).InnerFactor().Select(f => f.ToExpr()).BuildString("\n"));
-        Console.WriteLine("\n" + actual.Simplify().InnerFactor().Select(f => f.ToExpr()).BuildString("\n"));
         Assert.AreEqual(-De, -De.Simplify());
         Assert.AreEqual(Two.Raise(d), actual.Simplify());
     }
@@ -456,8 +453,8 @@ public class ExpressionParserTest
     {
         const string input = "foo(-3, x)()";
         var actual =
-                new Call(
-                    new Call(
+                Call.Create(
+                    Call.Create(
                         new Identifier("foo"),
                             NegativeOp.Create(Literal.Create(3)),
                             new Identifier("x")
@@ -508,8 +505,8 @@ public class ExpressionParserTest
                 Literal.Create(3)
             ),
             MultiplyOp.Create(
-                new Call(
-                    new Call(
+                Call.Create(
+                    Call.Create(
                         new Identifier("foo"),
                             NegativeOp.Create(Literal.Create(3)),
                             new Identifier("x")
@@ -625,7 +622,7 @@ public class ExpressionParserTest
         var eleven = Literal.Create(11);
         var sixteenPthirtyone = ExprParser.ParseOrThrow("16.31");
         var r = new Identifier("r");
-        var fOfx = new Call(new Identifier("f"), x);
+        var fOfx = Call.Create(new Identifier("f"), x);
         var expected = ExprParser.ParseOrThrow(input);
         var actual = (one - (a * (three - four) * x / twentyone)).Raise(three) - (one / two).Raise(five) + eleven - ((sixteenPthirtyone.Raise(three) - a) * r * fOfx).Simplify();
         Assert.AreEqual(expected.Simplify(), actual);
