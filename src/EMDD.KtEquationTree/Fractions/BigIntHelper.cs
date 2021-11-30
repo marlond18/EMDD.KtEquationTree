@@ -9,6 +9,35 @@ using Parser.Expression.Var;
 namespace EMDD.KtEquationTree.Fractions;
 public static class BigIntHelper
 {
+    internal static Fraction ToFraction(this decimal value, decimal accuracy)
+    {
+        int sign = value < 0 ? -1 : 1;
+        value = value < 0 ? -value : value;
+        int integerpart = (int)value;
+        value -= integerpart;
+        var minimalvalue = value - accuracy;
+        if (minimalvalue < 0.0m) return new Fraction(sign * integerpart, 1);
+        var maximumvalue = value + accuracy;
+        if (maximumvalue > 1.0m) return new Fraction(sign * (integerpart + 1), 1);
+        int a = 0;
+        int b = 1;
+        int c = 1;
+        int d = (int)(1 / maximumvalue);
+        while (true)
+        {
+            int n = (int)((b * minimalvalue - a) / (c - d * minimalvalue));
+            if (n == 0) break;
+            a += n * c;
+            b += n * d;
+            n = (int)((c - d * maximumvalue) / (b * maximumvalue - a));
+            if (n == 0) break;
+            c += n * a;
+            d += n * b;
+        }
+        int denominator = b + d;
+        return new Fraction(sign * (integerpart * denominator + (a + c)), denominator);
+    }
+
     public static Expr ToExpr(this BigInteger i)
     {
         if (i < 0) return NegativeOp.Create(Literal.Create(BigInteger.Abs(i)));

@@ -25,9 +25,7 @@ public struct Fraction
     }
 
     public override int GetHashCode()
-    {
-        return HashCode.Combine(num, den);
-    }
+        => unchecked(HashCode.Combine(typeof(Fraction), num, den));
 
     public void Deconstruct(out BigInteger num, out BigInteger den)
     {
