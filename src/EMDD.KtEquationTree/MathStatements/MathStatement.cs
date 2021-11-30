@@ -1,4 +1,5 @@
 ﻿using EMDD.KtEquationTree.Exprs;
+using EMDD.KtEquationTree.Exprs.Singles;
 using EMDD.KtEquationTree.Relations;
 
 namespace EMDD.KtEquationTree.MathStatements;
@@ -15,6 +16,15 @@ public abstract class MathStatement : IEquatable<MathStatement>
 
     public abstract MathStatement Subtitute(Expr current, Expr replacement);
 
+    public MathStatement Subtitute(Expr current, int replacement)
+    {
+        return Subtitute(current, Literal.Create(replacement));
+    }
+
+    public MathStatement Subtitute(Expr current, decimal replacement)
+    {
+        return Subtitute(current, Dec.Create(replacement));
+    }
 
     public static MathStatement operator -(MathStatement a)
     {
