@@ -25,9 +25,7 @@ public class MultiplyOp : MultiplicativeBinaryOp
         (One _, _) => right,
         (_, One _) => left,
         (Literal l, Literal r) => Literal.Create(l.Value * r.Value),
-        (DivideOp d1, DivideOp d2) => DivideOp.Create(d1.Left * d2.Left, d1.Right * d2.Right),
-        (DivideOp d, _) => DivideOp.Create(right * d.Left, d.Right),
-        (_, DivideOp d) => DivideOp.Create(left * d.Left, d.Right),
+        (FractOp d1, FractOp d2) => DivideOp.Create(d1.Left * d2.Left, d1.Right * d2.Right),
         _ => new MultiplyOp(left, right)
     };
 
@@ -40,7 +38,7 @@ public class MultiplyOp : MultiplicativeBinaryOp
         _ => throw new NotImplementedException()
     };
 
-    internal override string Op => "*";
+    internal override string Op => "×";
 
     protected override (Expr left, Expr right) Arrange(Expr a, Expr b)
     {

@@ -484,7 +484,7 @@ public class ExpressionParserTest
             Literal.Create(3)
             ).Simplify();
         var expected = ExprParser.ParseOrThrow(input);
-        Assert.AreEqual(expected.ToString(), "3*(d-12)");
+        Assert.AreEqual(expected.ToString(), "3×(d-12)");
         Assert.AreEqual(expected.Simplify(), actual);
         input = "(d+12) * 3";
         actual = MultiplyOp.Create(

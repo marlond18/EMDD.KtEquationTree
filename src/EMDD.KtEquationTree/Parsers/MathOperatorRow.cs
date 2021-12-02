@@ -29,6 +29,7 @@ namespace Parser.Methods
         internal static readonly OperatorRow Exp = CreateInfixOperator(Operator.InfixL, 'e', (l, r) =>
         MultiplyOp.Create(l, PowerOp.Create(10, r)));
         internal static readonly OperatorRow Mult = CreateInfixOperator(Operator.InfixL, '*', MultiplyOp.Create);
+        internal static readonly OperatorRow Mult2 = CreateInfixOperator(Operator.InfixL, '×', MultiplyOp.Create);
         internal static readonly OperatorRow Div = CreateInfixOperator(Operator.InfixL, '/', DivideOp.Create);
         internal static readonly OperatorRow Raise = CreateInfixOperator(Operator.InfixR, '^', PowerOp.Create);
     }

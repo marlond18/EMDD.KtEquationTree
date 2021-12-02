@@ -38,7 +38,7 @@ public static class ExprParser
 
     private static OperatorRow[] FirstLevelBinary() => new[] { MathOperatorRow.Add, MathOperatorRow.Subtract};
 
-    private static OperatorRow[] SecondLevelBinary() => new[] { MathOperatorRow.Raise, MathOperatorRow.Mult, MathOperatorRow.Div, MathOperatorRow.Exp };
+    private static OperatorRow[] SecondLevelBinary() => new[] { MathOperatorRow.Raise, MathOperatorRow.Mult, MathOperatorRow.Mult2, MathOperatorRow.Div, MathOperatorRow.Exp };
 
     private static OperatorRow[] UnaryOp() => new[] { MathOperatorRow.Negate, MathOperatorRow.Sqrt, MathOperatorRow.Complement };
 

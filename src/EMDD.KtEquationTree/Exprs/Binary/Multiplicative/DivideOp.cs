@@ -7,6 +7,23 @@ using EMDD.KtEquationTree.Relations;
 using Parser.Expression;
 
 namespace EMDD.KtEquationTree.Exprs.Binary.Multiplicative;
+public class FractOp : DivideOp
+{
+    internal FractOp(Expr left, Expr right) : base(left, right)
+    {
+        _num = (Literal)Left;
+        _den = (Literal)Right;
+    }
+
+    private readonly Literal _num;
+    
+    private readonly Literal _den;
+
+    public BigInteger Numerator => _num.Value;
+
+    public BigInteger Denomerator => _den.Value;
+}
+
 public class DivideOp : MultiplicativeBinaryOp
 {
     protected DivideOp(Expr left, Expr right) : base(left, right)
@@ -20,6 +37,7 @@ public class DivideOp : MultiplicativeBinaryOp
         (_, One _) => left,
         (null, _) => new Zero(),
         (Zero _, _) => new Zero(),
+        (Literal, Literal)=> new FractOp(left,right),
         _ => new DivideOp(left, right)
     };
 
