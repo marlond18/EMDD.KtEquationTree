@@ -98,5 +98,5 @@ public class Literal : Single
         return true;
     }
 
-    public override Expr Subtitute(Expr current, Expr replacement) => this;
+    public override Expr Substitute(Expr current, Expr replacement) => this;
 }

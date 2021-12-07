@@ -14,8 +14,8 @@ public class ExprMethodTests
         var e = ExprParser.ParseOrThrow(expr);
         var aa = ExprParser.ParseOrThrow("a_a") as Expr;
         var bb = ExprParser.ParseOrThrow("b_b") as Expr;
-        var result1 = e.Subtitute(aa, ExprParser.ParseOrThrow(a) as Expr);
-        var result2 = result1.Subtitute(bb, ExprParser.ParseOrThrow(b) as Expr);
+        var result1 = e.Substitute(aa, ExprParser.ParseOrThrow(a) as Expr);
+        var result2 = result1.Substitute(bb, ExprParser.ParseOrThrow(b) as Expr);
         if (result2.TryToDouble(out double actual))
         {
             Assert.AreEqual(expected, actual, 0.00000001);

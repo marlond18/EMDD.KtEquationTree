@@ -77,9 +77,9 @@ public sealed class Call : UnaryOp
         return false;
     }
 
-    public override Expr Subtitute(Expr current, Expr replacement)
+    public override Expr Substitute(Expr current, Expr replacement)
     {
         if (Expr == current) return new Call(replacement, Arguments.ReplaceAll(current, replacement));
-        return Call.Create(Expr.Subtitute(current, replacement), Arguments.ReplaceAll(current, replacement));
+        return Call.Create(Expr.Substitute(current, replacement), Arguments.ReplaceAll(current, replacement));
     }
 }

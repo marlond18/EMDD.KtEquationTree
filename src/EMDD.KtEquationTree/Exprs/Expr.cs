@@ -50,7 +50,7 @@ public abstract class Expr : MathStatement, IEquatable<Expr>
 
     public abstract override Expr Simplify();
 
-    public abstract override Expr Subtitute(Expr current, Expr replacement);
+    public abstract override Expr Substitute(Expr current, Expr replacement);
 
     protected override MathStatement Mult(Relation other)
     {

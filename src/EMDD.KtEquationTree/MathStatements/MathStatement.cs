@@ -14,16 +14,16 @@ public abstract class MathStatement : IEquatable<MathStatement>
 
     public abstract MathStatement Simplify();
 
-    public abstract MathStatement Subtitute(Expr current, Expr replacement);
+    public abstract MathStatement Substitute(Expr current, Expr replacement);
 
-    public MathStatement Subtitute(Expr current, int replacement)
+    public MathStatement Substitute(Expr current, int replacement)
     {
-        return Subtitute(current, Literal.Create(replacement));
+        return Substitute(current, Literal.Create(replacement));
     }
 
-    public MathStatement Subtitute(Expr current, decimal replacement)
+    public MathStatement Substitute(Expr current, decimal replacement)
     {
-        return Subtitute(current, Dec.Create(replacement));
+        return Substitute(current, Dec.Create(replacement));
     }
 
     public static MathStatement operator -(MathStatement a)

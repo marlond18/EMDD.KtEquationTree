@@ -30,14 +30,14 @@ public sealed class EqualsOp : Relation, IEquatable<EqualsOp>
         return v;
     }
 
-    public override MathStatement Subtitute(Expr current, Expr replacement)
+    public override MathStatement Substitute(Expr current, Expr replacement)
     {
         return (Left, Right) switch
         {
-            (Expr el, Expr er) => Create(el.Subtitute(current, replacement), er.Subtitute(current, replacement)),
-            (Expr el, MathStatement er) => Create(el.Subtitute(current, replacement), er.Subtitute(current, replacement)),
-            (MathStatement el, Expr er) => Create(el.Subtitute(current, replacement), er.Subtitute(current, replacement)),
-            (MathStatement el, MathStatement er) => Create(el.Subtitute(current, replacement), er.Subtitute(current, replacement)),
+            (Expr el, Expr er) => Create(el.Substitute(current, replacement), er.Substitute(current, replacement)),
+            (Expr el, MathStatement er) => Create(el.Substitute(current, replacement), er.Substitute(current, replacement)),
+            (MathStatement el, Expr er) => Create(el.Substitute(current, replacement), er.Substitute(current, replacement)),
+            (MathStatement el, MathStatement er) => Create(el.Substitute(current, replacement), er.Substitute(current, replacement)),
             _ => throw new NotImplementedException()
         };
     }

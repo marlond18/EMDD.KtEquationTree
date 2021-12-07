@@ -89,10 +89,10 @@ public class SubtractOp : AdditiveBinaryOp
         return false;
     }
 
-    public override Expr Subtitute(Expr current, Expr replacement)
+    public override Expr Substitute(Expr current, Expr replacement)
     {
-        var newLeft = Left == current ? replacement : Left.Subtitute(current, replacement);
-        var newRight = Right == current ? replacement : Right.Subtitute(current, replacement);
+        var newLeft = Left == current ? replacement : Left.Substitute(current, replacement);
+        var newRight = Right == current ? replacement : Right.Substitute(current, replacement);
         return Create(newLeft, newRight);
     }
 }

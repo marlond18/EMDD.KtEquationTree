@@ -53,7 +53,7 @@ public class Dec : Single
         return _rational.Simplify();
     }
 
-    public override Expr Subtitute(Expr current, Expr replacement)
+    public override Expr Substitute(Expr current, Expr replacement)
     {
         return this;
     }

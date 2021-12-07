@@ -10,7 +10,7 @@ public class ConcreteDesignFormula
         var expected = Dec.Create(0.85m) - (Dec.Create(0.05m) / Literal.Create(7)) * (new Identifier("fᐠ_c") - Literal.Create(28));
         Assert.AreEqual(expected, actual);
         Assert.AreEqual("0.85-((0.05/7)×(fᐠ_c-28))", actual.ToString());
-        var substiResult = actual.Subtitute(new Identifier("fᐠ_c"), 32).Simplify();
+        var substiResult = actual.Substitute(new Identifier("fᐠ_c"), 32).Simplify();
         Assert.AreEqual(substiResult, DivideOp.Create(23, 28));
         if (substiResult.TryToDouble(out var val))
         {

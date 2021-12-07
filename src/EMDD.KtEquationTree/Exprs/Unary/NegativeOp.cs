@@ -84,9 +84,9 @@ namespace EMDD.KtEquationTree.Exprs.Unary
             return false;
         }
 
-        public override Expr Subtitute(Expr current, Expr replacement)
+        public override Expr Substitute(Expr current, Expr replacement)
         {
-            var newExpr = Expr== current ? replacement : Expr.Subtitute(current, replacement);
+            var newExpr = Expr== current ? replacement : Expr.Substitute(current, replacement);
             return Create(newExpr);
         }
     }

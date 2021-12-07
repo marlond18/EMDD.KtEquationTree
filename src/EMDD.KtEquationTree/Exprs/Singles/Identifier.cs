@@ -46,7 +46,7 @@ public class Identifier : Single
         return false;
     }
 
-    public override Expr Subtitute(Expr current, Expr replacement)
+    public override Expr Substitute(Expr current, Expr replacement)
     {
         return this == current ? replacement : this;
     }
