@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "EMDD.KtEquationTree/1.0.3": {
+      "EMDD.KtEquationTree/1.0.4": {
         "dependencies": {
           "EMDD.Kt.Extensions": "1.0.0.1",
           "Pidgin": "3.0.0"
@@ -40,7 +40,7 @@
     }
   },
   "libraries": {
-    "EMDD.KtEquationTree/1.0.3": {
+    "EMDD.KtEquationTree/1.0.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
