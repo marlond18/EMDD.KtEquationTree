@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>EMDD.KtEquationTree</AssemblyName>
     <RootNamespace>EMDD.KtEquationTree</RootNamespace>
@@ -33,7 +33,7 @@
 
   <ItemGroup>
     <PackageReference Include="EMDD.Kt.Extensions" Version="1.0.0.1" />
-    <PackageReference Include="Pidgin" Version="3.0.0" />
+    <PackageReference Include="Pidgin" Version="3.2.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -98,19 +98,15 @@ public abstract class Expr : MathStatement, IEquatable<Expr>
     {
         if (ReferenceEquals(this, other)) return true;
         if (this is null || other is null) return false;
-        if(other is Expr e)
-        {
-            return Equals(e);
-        }
-        return false;
+        return other is Expr e && Equals(e);
     }
 
     public override MathStatement Raise(Relation r)
     {
-        if(r is EqualsOp eo)
+        return r switch
         {
-            return EqualsOp.Create(this.Raise(eo.Left), this.Raise(eo.Right));
-        }
-        throw new NotImplementedException();
+            EqualsOp eo => EqualsOp.Create(Raise(eo.Left), Raise(eo.Right)),
+            _ => throw new NotImplementedException()
+        };
     }
 }

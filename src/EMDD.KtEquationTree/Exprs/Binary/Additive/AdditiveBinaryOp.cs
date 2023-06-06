@@ -1,7 +1,7 @@
 ﻿using EMDD.KtEquationTree.Exprs.Binary.Main;
 
 namespace EMDD.KtEquationTree.Exprs.Binary.Additive;
-public abstract class AdditiveBinaryOp : BinaryOp, IEquatable<Expr>
+public abstract class AdditiveBinaryOp : BinaryOp
 {
     protected AdditiveBinaryOp(Expr left, Expr right) : base(left, right)
     {
