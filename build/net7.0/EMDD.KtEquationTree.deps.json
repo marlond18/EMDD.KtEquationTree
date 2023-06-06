@@ -1,0 +1,57 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "EMDD.KtEquationTree/1.0.5": {
+        "dependencies": {
+          "EMDD.Kt.Extensions": "1.0.0.1",
+          "Pidgin": "3.2.1"
+        },
+        "runtime": {
+          "EMDD.KtEquationTree.dll": {}
+        }
+      },
+      "EMDD.Kt.Extensions/1.0.0.1": {
+        "runtime": {
+          "lib/net5.0/EMDD.Kt.Extensions.dll": {
+            "assemblyVersion": "1.0.0.1",
+            "fileVersion": "1.0.0.1"
+          }
+        }
+      },
+      "Pidgin/3.2.1": {
+        "runtime": {
+          "lib/net5.0/Pidgin.dll": {
+            "assemblyVersion": "3.2.1.0",
+            "fileVersion": "3.2.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EMDD.KtEquationTree/1.0.5": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EMDD.Kt.Extensions/1.0.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ps+ivfu0Vamxrl9CjEjHxAZqgyjavm1rv57JxhnKNhEdo2prDp3xuNS/MRMXYDcsiLOrnA0k4Pggy7CYB4ShvQ==",
+      "path": "emdd.kt.extensions/1.0.0.1",
+      "hashPath": "emdd.kt.extensions.1.0.0.1.nupkg.sha512"
+    },
+    "Pidgin/3.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Jl7OaTEcyMxh4bCLTyh8Tnk0Efwd4hIYvszaLkFhU6oDIa7rdZF1s9f1MAvC4xyevzGwR8ZmVTQwoDyih6/66A==",
+      "path": "pidgin/3.2.1",
+      "hashPath": "pidgin.3.2.1.nupkg.sha512"
+    }
+  }
+}
